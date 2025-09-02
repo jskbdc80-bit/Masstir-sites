@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Masstir — The Global Skill Stage</title>
+  <meta name="description" content="Masstir is the global stage for skills. Watch champions, learn from masters, and compete to win.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta property="og:title" content="Masstir — The Global Skill Stage">
+  <meta property="og:description" content="Watch. Learn. Compete.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="og-image.png">
+  <style>
+:root{
+  --bg:#0b0d12; --panel:#0f1219; --text:#e5e7eb; --muted:#a9b1bb;
+  --brand1:#0ea5e9; --brand2:#22c55e; --accent:#8b5cf6;
+  --ring: 0 0 0 6px rgb(14 165 233 / 0.15);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:radial-gradient(1200px 800px at 80% -10%, #102032 0%, #0b0d12 50%);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,Helvetica,sans-serif}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;background:linear-gradient(180deg,#0b0d12 0%, rgba(11,13,18,0.85) 100%);backdrop-filter: blur(8px);border-bottom:1px solid #1f2937;z-index:20}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.nav a{color:var(--muted);text-decoration:none;margin-left:18px}
+.nav a:hover{color:var(--text)}
+.logo img{height:28px;display:block}
+.btn{display:inline-flex;align-items:center;gap:10px;border:1px solid #1f2937;background:linear-gradient(90deg,rgba(14,165,233,.15),rgba(34,197,94,.15));color:#fff;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700}
+.btn:hover{box-shadow:var(--ring)}
+.hero{padding:72px 0 40px;border-bottom:1px solid #1f2937}
+.kicker{color:var(--brand1);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:12px}
+h1{font-size:46px;line-height:1.1;margin:12px 0 18px}
+h2{font-size:28px;margin:28px 0 14px}
+p.lead{color:var(--muted);font-size:18px;max-width:60ch}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+.card{background:linear-gradient(180deg,rgba(16,18,25,.6),rgba(8,10,14,.6));border:1px solid #1f2937;border-radius:16px;padding:18px}
+.badge{display:inline-flex;gap:8px;align-items:center;background:#0d1420;border:1px solid #1e293b;color:#9fb3c8;border-radius:999px;padding:6px 10px;font-size:12px}
+.form{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
+.form input[type="email"]{flex:1;min-width:220px;background:#0a0f17;color:#fff;border:1px solid #243244;border-radius:12px;padding:14px 14px}
+.form input[type="email"]:focus{outline:none;box-shadow:var(--ring);border-color:#334155}
+.form button{cursor:pointer}
+.grid{display:grid;gap:18px}
+.grid.cols-3{grid-template-columns:repeat(3,1fr)}
+.grid.cols-2{grid-template-columns:repeat(2,1fr)}
+.tile{padding:16px;border:1px solid #1f2937;border-radius:14px;background:linear-gradient(180deg,rgba(16,18,25,.6),rgba(8,10,14,.6))}
+.tile h3{margin:6px 0 6px;font-size:18px}
+.small{color:var(--muted);font-size:14px}
+.section{padding:36px 0;border-bottom:1px solid #1f2937}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.step{padding:18px;border:1px dashed #223045;border-radius:14px}
+.step .num{width:28px;height:28px;border-radius:999px;background:linear-gradient(90deg,var(--brand1),var(--brand2));display:inline-grid;place-items:center;font-weight:800}
+.faq details{background:#0c1119;border:1px solid #1e293b;border-radius:12px;padding:12px}
+.faq summary{cursor:pointer;font-weight:700}
+footer{padding:30px 0;color:#9aa3ad}
+footer a{color:#9aa3ad;text-decoration:none}
+.hero-visual{height:320px;border-radius:16px;border:1px solid #1f2937;background:
+ radial-gradient(260px 120px at 25% 25%, rgba(14,165,233,.35), transparent 60%),
+ radial-gradient(260px 120px at 75% 35%, rgba(34,197,94,.35), transparent 60%),
+ radial-gradient(340px 180px at 50% 120%, rgba(139,92,246,.25), transparent 60%),
+ linear-gradient(180deg, #0a0e15, #0a0d13);
+ display:grid;place-items:center;position:relative;overflow:hidden}
+.pill{position:absolute;inset:auto 20px 20px auto;background:#0c121b;border:1px solid #223045;padding:8px 12px;border-radius:999px;font-size:12px;color:#b0bac6}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .grid.cols-3{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  h1{font-size:34px}
+  .grid.cols-3{grid-template-columns:1fr}
+}
+.sr-only{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+.icon{width:16px;height:16px;display:inline-block}
+.icon svg{width:100%;height:100%}
+hr.sep{border:0;border-top:1px solid #1f2937;margin:22px 0}
+</style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#"><img src="logo.svg" alt="Masstir"></a>
+      <nav>
+        <a href="#contests">Contests</a>
+        <a href="#how">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn" href="#signup">Get early access</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge"><span class="icon">
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='currentColor' d='M12 3l2.39 4.84 5.34.78-3.86 3.76.91 5.32L12 15.9 6.22 17.7l.91-5.32L3.27 8.62l5.34-.78z'/></svg>
+          </span> Early access is open</div>
+          <h1>Masstir — The Global Skill Stage</h1>
+          <p class="lead">Watch champions, learn the methods, and enter your best shot. One platform that blends <strong>entertainment</strong>, <strong>education</strong>, and <strong>competition</strong>.</p>
+          <form name="signup" method="POST" data-netlify="true" class="form" id="signup">
+            <input type="hidden" name="form-name" value="signup">
+            <label class="sr-only" for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="Enter your email" required>
+            <button class="btn" type="submit">Notify me</button>
+          </form>
+          <p class="small">No spam. We’ll email when the first contests go live.</p>
+        </div>
+        <div class="hero-visual card" aria-hidden="true">
+          <div class="pill">Watch • Learn • Compete</div>
+          <svg width="88%" height="88%" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Abstract swirl">
+            <defs>
+              <linearGradient id="gg1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#0ea5e9"/>
+                <stop offset="100%" stop-color="#22c55e"/>
+              </linearGradient>
+            </defs>
+            <path d="M40 260 C 120 140, 220 180, 300 120 S 520 60, 560 160" fill="none" stroke="url(#gg1)" stroke-width="8" stroke-linecap="round"/>
+            <circle cx="300" cy="120" r="6" fill="#8b5cf6"/>
+            <circle cx="120" cy="140" r="4" fill="#0ea5e9"/>
+            <circle cx="480" cy="100" r="4" fill="#22c55e"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contests">
+      <div class="container">
+        <h2>Launch Contests</h2>
+        <div class="grid cols-3">
+          <div class="tile">
+            <h3>Fastest Skim Coat</h3>
+            <p class="small">Show your technique and finish quality. Time + craft both count.</p>
+          </div>
+          <div class="tile">
+            <h3>Craziest Tool Hack</h3>
+            <p class="small">Inventive, safe, and effective only. Show the before/after.</p>
+          </div>
+          <div class="tile">
+            <h3>Most Creative Push-Ups</h3>
+            <p class="small">Form, flair, and endurance. Surprise us.</p>
+          </div>
+        </div>
+        <hr class="sep">
+        <p class="small">Want to sponsor a category? <a href="#signup">Join the waitlist</a> and we’ll reach out.</p>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="container">
+        <h2>How it works</h2>
+        <div class="steps">
+          <div class="step">
+            <span class="num">1</span>
+            <h3>Watch the Crème</h3>
+            <p class="small">Highlight reels of the top champions for instant inspiration.</p>
+          </div>
+          <div class="step">
+            <span class="num">2</span>
+            <h3>Learn the Crème</h3>
+            <p class="small">Breakdowns and tutorials from the best performers.</p>
+          </div>
+          <div class="step">
+            <span class="num">3</span>
+            <h3>Compete</h3>
+            <p class="small">Submit your entry, rise up the board, and win rewards.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Why join Masstir?</h2>
+        <div class="grid cols-2">
+          <div class="tile">
+            <h3>Proof beats talk</h3>
+            <p class="small">We’re building a proof-based learning and competition platform. If you can do it, you can show it.</p>
+          </div>
+          <div class="tile">
+            <h3>Fair & scalable</h3>
+            <p class="small">Simple rules, transparent judging, and global categories—from trades to arts to fitness.</p>
+          </div>
+          <div class="tile">
+            <h3>Creators win</h3>
+            <p class="small">Revenue sharing, sponsorships, and a Creator Academy for advanced courses.</p>
+          </div>
+          <div class="tile">
+            <h3>Community-first</h3>
+            <p class="small">We celebrate skill, hustle, and honest feedback. No gatekeeping.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq">
+      <div class="container">
+        <h2>FAQ</h2>
+        <div class="grid">
+          <details>
+            <summary>Is entry free?</summary>
+            <p>Early contests are free. Some sponsored or prize contests may have small entry fees later.</p>
+          </details>
+          <details>
+            <summary>What can I compete in?</summary>
+            <p>Trades, tools, art, music, fitness, speed-building, and more. We’ll announce new categories monthly.</p>
+          </details>
+          <details>
+            <summary>How do payouts work?</summary>
+            <p>Transparent rules per contest. Sponsors fund prizes, and winners are paid via secure providers.</p>
+          </details>
+          <details>
+            <summary>How do I sponsor a contest?</summary>
+            <p>Sign up above and select “I want to sponsor contests” in the follow-up email.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="grid cols-2">
+        <div>
+          <img src="logo.svg" alt="Masstir" style="height:24px">
+          <p class="small">© 2025 Masstir — All rights reserved.</p>
+        </div>
+        <div class="small" style="text-align:right">
+          <a href="#signup">Get early access</a> ·
+          <a href="#">Instagram</a> ·
+          <a href="#">YouTube</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<svg width="180" height="36" viewBox="0 0 600 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Masstir logo">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+  </defs>
+  <text x="0" y="85" font-family="Inter, Arial, Helvetica, sans-serif" font-weight="800" font-size="90" fill="url(#g)">masstir</text>
+  <path d="M520 20c22 10 40 30 40 55 0 34-28 62-62 62-27 0-50-18-58-42"
+        fill="none" stroke="url(#g)" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="520" cy="20" r="7" fill="#0ea5e9"/>
+</svg>
